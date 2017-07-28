@@ -5,7 +5,7 @@
 
 Install Require Dependencies
 ```bash
-install.sh
+./install.sh
 ```
 
 Login to github with `gh`
@@ -34,8 +34,8 @@ e.g.
 
 The command above will generate a `config/labels.json` 
 
-Add entries there to distribute to all repositories listen in `config/repo.config`
+Add entries there to distribute to all repositories listed in `config/repo.config`
 
 ```bash
-createOrganizationLabels.sh
+./createOrganizationLabels.sh
 ```
