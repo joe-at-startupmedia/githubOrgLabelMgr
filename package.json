@@ -1,0 +1,15 @@
+{
+  "name": "githubMgmt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:joe-at-startupmedia/githubOrgLabelMgr.git",
+  "author": "joe-at-startupmedia <joseph.persie@startupmedia.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gh": "^1.13.0",
+    "github-label": "^1.2.1"
+  },
+  "scripts": {
+    "gh-auth": "`npm bin`/gh user -l"
+  }
+}

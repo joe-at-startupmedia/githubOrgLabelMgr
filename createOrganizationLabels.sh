@@ -1,4 +1,4 @@
 cat config/repos.config | while read line
 do
-  github-label $line -j 'config/labels.json'
+  `npm bin`/github-label $line -j 'config/labels.json'
 done

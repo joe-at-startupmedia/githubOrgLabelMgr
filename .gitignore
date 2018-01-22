@@ -1,3 +1,5 @@
 accessToken.sh
-config/*
-!.gitkeep
+config/labels.config
+config/labels.json
+config/repos.config
+node_modules

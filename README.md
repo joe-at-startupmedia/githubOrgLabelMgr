@@ -5,12 +5,12 @@
 
 Install Require Dependencies
 ```bash
-./install.sh
+yarn install
 ```
 
 Login to github with `gh`
 ```bash
-gh user -l
+npm run gh-auth
 ```
 
 Create and export github token:
@@ -21,7 +21,12 @@ https://help.github.com/articles/creating-a-personal-access-token-for-the-comman
 export GITHUB_LABEL_TOKEN='Your Token Here'
 ```
 
-Run the config script to generate necessary labels
+Run the config script on an orhanization repository to generate desired labels.
+
+
+```bash
+./config.sh [organization] [source_repo]
+```
 
 - Organization: The organization which to retieve the repos from
 - Source Repository: The repository to fetch all tags from and apply elsewhere
