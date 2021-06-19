@@ -1,7 +1,9 @@
-source `pwd`/accessToken.sh
-echo "generating repos.config: `npm bin`/gh re --list -O $1 | grep $1 > config/repos.config"
-`npm bin`/gh re --list -O $1 | grep $1 > config/repos.config
-echo "generating labels.config: `npm bin`/github-label $1/$2 > config/labels.config"
-`npm bin`/github-label $1/$2 > config/labels.config
-echo "genrating labels json files: ./generateLabelsJson.sh $1/$2 && cat config/*.config"  
-./generateLabelsJson.sh $1/$2 && cat config/*.config
+GH_ORG=$1
+GH_REP=$2
+
+set -x
+
+echo "generating config/repos.config" && \
+gh repo list $GH_ORG --limit 200 --json name --jq '.[].name' > config/repos.config && \
+echo "generating config/labels.json" && \
+gh repo view $GH_ORG/$GH_REP --json labels --jq '.labels' > config/labels.json

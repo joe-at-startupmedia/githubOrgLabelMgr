@@ -1,5 +1,5 @@
-accessToken.sh
-config/labels.config
 config/labels.json
 config/repos.config
+config/.env.token
 node_modules
+yarn.lock

@@ -2,33 +2,24 @@
 
 #### Joseph Persie
 
-
-Install Require Dependencies
+1. Install Require Dependencies
 ```bash
 yarn install
 ```
 
-Login to github with `gh`
-```bash
-npm run gh-auth
-```
+1. Install GithHub CLI
+[Installation](https://github.com/cli/cli#installation)
 
----
-Note: the command above generate a file ~/.gh.json which in turn generates a access-token. This omits the need for the step below,
-however one must assure to remove any sensitive privileges granted to the token by default and ideally remove all privileges when the 
-token is no longer in use. If the token is removed from github the file will still exist resulting in 403 errors even after attempting
-to reauthenticate with `npm run gh-auth`.
+1. You'll also need a GitHub access token ready so that the the tool will have access to your repositories.
+You can [generate an access token here](https://github.com/settings/tokens), be sure to allow the `"repo"` scope.
 
-Create and export github token:
-
-https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+1. Run the auth script to generate the github token
 
 ```bash
-export GITHUB_LABEL_TOKEN='Your Token Here'
+./auth.sh [github_token]
 ```
 
-Run the config script on an orhanization repository to generate desired labels.
-
+1. Run the config script on an organization repository to generate desired labels.
 
 ```bash
 ./config.sh [organization] [source_repo]
@@ -37,16 +28,10 @@ Run the config script on an orhanization repository to generate desired labels.
 - Organization: The organization which to retieve the repos from
 - Source Repository: The repository to fetch all tags from and apply elsewhere
 
-e.g. 
+1. The command above will generate a `config/labels.json` 
+
+1. Add entries there to distribute to all repositories listed in `config/repo.config`
 
 ```bash
-./config.sh nodejs node
-```
-
-The command above will generate a `config/labels.json` 
-
-Add entries there to distribute to all repositories listed in `config/repo.config`
-
-```bash
-./createOrganizationLabels.sh
+./createOrganizationLabels.sh [organization]
 ```
