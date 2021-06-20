@@ -26,11 +26,9 @@ Run the config script on an organizations repository to generate `config/labels.
 ```
 
 - Organization: The organization of the Source Repository.
-- Source Repository: The repository to fetch all labels from and distribute throught the organization.
+- Source Repository: The repository to fetch all labels from and distribute throughout the organization.
 
 ### Distrubute The Organization Labels Throughout
-Add entries there to distribute to all repositories listed in `config/repo.config`.
-
 ```bash
 ./createOrganizationLabels.sh [organization]
 ```
