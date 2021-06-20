@@ -16,19 +16,26 @@ You can [generate an access token here](https://github.com/settings/tokens), be 
 ### Generate The Token File
 Run the auth script to generate the GitHub token configutation file in `config/.env.token`.
 ```bash
-./auth.sh [github_token]
+./golm -a [github_token]
 ```
 
 ### Generate The Labels File
-Run the config script on an organizations repository to generate `config/labels.json` file.
+Generate `config/labels.json` and `config/repos.config` files.
 ```bash
-./config.sh [organization] [source_repo]
+./golm -g [organization] [source_repo]
 ```
 
 - Organization: The organization of the Source Repository.
 - Source Repository: The repository to fetch all labels from and distribute throughout the organization.
 
 ### Distrubute The Organization Labels Throughout
+This will apply label to each repository through the organization based on each repository listed in the generated `config/repos.config` file.
 ```bash
-./createOrganizationLabels.sh [organization]
+./golm -s [organization]
+```
+
+### Reauthenitcate Without Token Specification
+Assuming the `config/.env.token` file is present it will use this token to reuathenticate to GitHub using the GitHub CLI.
+```bash
+./golm -r
 ```
